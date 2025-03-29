@@ -1,0 +1,35 @@
+/* App.css */
+
+/* Basic resets */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9fafb; /* Light gray background */
+  }
+  
+  /* Utility classes (if not using Tailwind) */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+  
+  /* Navbar style (example) */
+  .navbar {
+    background-color: #1f2937; /* Gray-800 */
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+  
+  .navbar a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 0.5rem;
+  }
+  
+  .navbar a:hover {
+    text-decoration: underline;
+  }
+  

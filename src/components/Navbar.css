@@ -1,0 +1,114 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #2c3e50;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 10px 40px; /* Adds left space */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.logo-img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.brand-text {
+  font-size: 28px; 
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: baseline;
+  letter-spacing: 1px;
+}
+
+.brand-letter {
+  font-size: 32px; 
+  color: #ff6600; /* Highlighted color for 'S' and 'M' */
+  transition: transform 0.3s ease, color 0.3s ease;
+  margin-right: 2px;
+}
+
+.brand-letter:hover {
+  transform: translateY(-4px);
+  color: #cc4400; /* Darker orange on hover */
+}
+
+.brand-lower {
+  color: #007bff; /* Blue color for lowercase letters */
+  transition: color 0.3s ease;
+}
+
+.brand-lower:hover {
+  color: #0056b3; /* Darker blue on hover */
+}
+
+
+
+
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 5px 15px;
+  position: relative;
+  transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.nav-link:hover {
+  color: #f39c12; /* Golden hover color */
+  transform: translateY(-2px); /* Moves the link slightly up */
+  /* text-shadow: 0px 0px 8px rgba(243, 156, 18, 0.8); Soft glow effect */
+}
+
+/* Gradient Underline Effect */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg, #f39c12, #e67e22);
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-link:hover::after {
+  width: 100%; /* Expands underline on hover */
+}
+
+
+.logout-button {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.logout-button:hover {
+  background: #c0392b;
+}

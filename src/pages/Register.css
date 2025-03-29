@@ -1,0 +1,110 @@
+/* Full-page container with a background gradient */
+.register-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #1f2937, #2563eb);
+  padding: 1rem;
+}
+
+/* Registration card styling */
+.register-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 450px;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Header section with role selection */
+.form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+/* Title styling */
+.register-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+/* Role selection dropdown */
+.role-select {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 5px;
+  background-color: #f9fafb;
+  cursor: pointer;
+}
+
+.role-select:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+/* Form styling */
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Input fields */
+.form-input {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+/* Grouped inputs for first and last name */
+.form-group {
+  display: flex;
+  gap: 1rem;
+}
+
+.form-group .form-input {
+  flex: 1;
+}
+
+/* Register button */
+.register-button {
+  padding: 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: #2563eb;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.register-button:hover {
+  background-color: #1d4ed8;
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
+  .register-card {
+    padding: 1.5rem;
+  }
+
+  .form-group {
+    flex-direction: column;
+  }
+}

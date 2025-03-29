@@ -1,0 +1,208 @@
+/* Background Styling */
+.user-dashboard {
+  background: url('https://source.unsplash.com/random/1600x900') no-repeat center center/cover;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Aligns content to the left */
+  padding-left: 100px;
+  position: relative;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 30px;
+  cursor: pointer;
+  color: white;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 1001;
+}
+
+/* Sidebar Menu */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background: #333;
+  color: white;
+  transition: 0.3s ease-in-out;
+  padding-top: 60px;
+  z-index: 1000;
+}
+
+/* Sidebar Open */
+.sidebar.open {
+  left: 0;
+}
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 20px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  padding: 15px 20px;
+  border-bottom: 1px solid #555;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: white;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar ul li a:hover {
+  background: #007bff;
+}
+
+/* Profile Card */
+.user-profile {
+  max-width: 400px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: left; /* Align text to left */
+  margin-left: 50px; /* Push profile to the left */
+}
+
+/* Profile Header */
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.profile-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid #007bff;
+}
+
+/* User Info */
+.profile-info h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.email {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.role {
+  font-size: 1rem;
+  color: #444;
+  font-weight: bold;
+}
+
+/* Profile Details */
+.profile-details {
+  text-align: left;
+  margin-top: 15px;
+}
+
+.profile-details h4 {
+  font-size: 1.2rem;
+  color: #222;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+.profile-details p {
+  font-size: 0.95rem;
+  color: #555;
+  margin: 5px 0;
+}
+
+/* Buttons */
+.profile-actions {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.edit-btn,
+.logout-btn {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+.edit-btn {
+  background: #007bff;
+  color: white;
+}
+
+.logout-btn {
+  background: #dc3545;
+  color: white;
+}
+
+.edit-btn:hover {
+  background: #0056b3;
+}
+
+.logout-btn:hover {
+  background: #c82333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .user-dashboard {
+      justify-content: center; /* Centers content on small screens */
+      padding-left: 0;
+  }
+  .user-profile {
+      margin-left: 0;
+  }
+}
+
+.sidebar ul li {
+  padding: 15px 20px;
+  border-bottom: 1px solid #555;
+  text-align: left;
+}
+
+.sidebar ul li button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.sidebar ul li button:hover {
+  background: #007bff;
+  padding-left: 5px;
+}
