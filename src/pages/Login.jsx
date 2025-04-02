@@ -11,10 +11,14 @@ const Login = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (localStorage.getItem("token")) {
-      navigate("/user-dashboard");
+    const token = localStorage.getItem("token");
+    if (token) {
+      // Delay navigation to prevent UI blinking
+      setTimeout(() => {
+        navigate("/user-dashboard");
+      }, 100);
     }
-  }, []);
+  }, [navigate]); // Dependency on navigate ensures it runs when the component mounts
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -23,11 +27,11 @@ const Login = () => {
 
     try {
       const user = await loginUser(username, password);
-      localStorage.setItem("token", user.token);
-      alert(`Welcome, ${user.firstName}!`); 
+      // localStorage.setItem("token", user.token);
+      alert(`Welcome, ${user.firstName}!`);
       navigate("/user-dashboard");
     } catch (err) {
-      setError(err.message);
+      setError(err.response?.data || "Invalid credentials!");
     } finally {
       setLoading(false);
     }
@@ -37,7 +41,7 @@ const Login = () => {
     <div className="login-page">
       <div className="login-card">
         <h2>Welcome to SmartMart</h2>
-        {error && <p className="error-message">{error}</p>} 
+        {error && <p className="error-message">{error}</p>}
         <form onSubmit={handleLogin}>
           <div className="form-group">
             <label>Username</label>
