@@ -41,7 +41,7 @@ export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   // Temporarily set isAuthenticated to true for testing
-  const [isAuthenticated, setIsAuthenticated] = useState(true); 
+  const [isAuthenticated, setIsAuthenticated] = useState(false); 
 
   const login = () => setIsAuthenticated(true);
   const logout = () => setIsAuthenticated(false);

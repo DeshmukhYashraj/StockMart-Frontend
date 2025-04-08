@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import AppRoutes from "./routes";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css"; // Global CSS (Tailwind or your custom styles)
 import { AuthProvider } from "./features/auth/AuthContext";
 
