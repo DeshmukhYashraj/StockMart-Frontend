@@ -16,18 +16,8 @@ export const registerUser = async (userData) => {
 
 // User Login API
 export const loginUser = async (username, password) => {
-  try {
-    const response = await api.post("/login", { username, password });
-    
-    // Store token in local storage
-    if (response.data) {
-      localStorage.setItem("user", JSON.stringify(response.data));
-    }
-
-    return response.data;
-  } catch (error) {
-    throw error.response?.data || "Login failed!";
-  }
+  const response = await axios.get("http://localhost:8080/api/login", {
+    params: { username, password },
+  });
+  return response.data; // This should be the role: "Admin" or "User"
 };
-
-export default api;

@@ -11,14 +11,15 @@ const Login = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (token) {
-      // Delay navigation to prevent UI blinking
+    
+
+    if (isLoggedIn && userRole) {
+      // Redirect based on role
       setTimeout(() => {
-        navigate("/user-dashboard");
+        navigate(userRole === "Admin" ? "/admin-dashboard" : "/user-dashboard");
       }, 100);
     }
-  }, [navigate]); // Dependency on navigate ensures it runs when the component mounts
+  }, [navigate]);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -26,10 +27,18 @@ const Login = () => {
     setError("");
 
     try {
-      const user = await loginUser(username, password);
-      // localStorage.setItem("token", user.token);
-      alert(`Welcome, ${user.firstName}!`);
-      navigate("/user-dashboard");
+      // API call — returns role (e.g., "Admin" or "User")
+      const role = await loginUser(username, password);
+
+      // Save data in localStorage
+      window.localStorage.setItem("isLoggedIn", "true");
+      window.localStorage.setItem("userRole", role);
+      window.localStorage.setItem("username", username); // optional
+      // localStorage.setItem("token", "fake-token"); // optional if backend returns token in future
+
+      // Alert and redirect
+      alert(`Welcome, ${username}! Role: ${role}`);
+      navigate(role === "Admin" ? "/admin-dashboard" : "/user-dashboard");
     } catch (err) {
       setError(err.response?.data || "Invalid credentials!");
     } finally {

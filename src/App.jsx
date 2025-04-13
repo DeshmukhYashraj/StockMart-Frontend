@@ -10,13 +10,14 @@ import Register from "./pages/Register";
 import AdminDashboard from "./pages/AdminDashboard";
 import UserDashboard from "./pages/UserDashboard";
 
-
+const isLogin=window.localStorage.getItem("loggedin");
+const userType=window.localStorage.getItem("userType");
 function App() {
   return (
     <>
     <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route exact path="/" element={isLogin==true?<></>:{Home}} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/dashboard" element={<Dashboard />} />

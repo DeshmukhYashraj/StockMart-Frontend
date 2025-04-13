@@ -69,6 +69,7 @@
   color: white;
   text-decoration: none;
   font-size: 18px;
+  display: flex;
   font-weight: 500;
   padding: 5px 15px;
   position: relative;
@@ -112,3 +113,73 @@
 .logout-button:hover {
   background: #c0392b;
 }
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #2c3e50;
+  color: white;
+  display: flex;
+  justify-content: space-between; /* separates logo and links */
+  align-items: center;
+  padding: 10px 40px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* spacing between nav links */
+}
+.nav-link.active {
+  color: #f39c12 !important;
+  font-weight: 600;
+}
+
+.nav-link.active::after {
+  width: 100%;
+  background: linear-gradient(90deg, #f39c12, #e67e22);
+}
+
+/* Dropdown active state */
+.dropdown-menu .dropdown-item.active {
+  background-color: #f39c12;
+  color: white;
+}
+/* Dropdown menu with half width */
+.custom-dropdown-menu {
+  width: 50vw;
+  max-width: 400px;
+  right: 0 !important;
+  left: auto !important;
+  background-color: #1f2d3d;
+  border-radius: 10px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
+  padding: 10px 0;
+}
+
+/* Dropdown item styles */
+.custom-dropdown-menu .dropdown-item {
+  color: white;
+  padding: 12px 20px;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+.custom-dropdown-menu .dropdown-item:hover,
+.custom-dropdown-menu .dropdown-item.active {
+  background-color: #f39c12;
+  color: #fff;
+}
+
+.logout-dropdown {
+  color: #ff4d4f;
+}
+
+.logout-dropdown:hover {
+  background-color: #c0392b;
+  color: #fff;
+}
+
